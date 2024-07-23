@@ -1,0 +1,353 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: #FAFAFA;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif !important;
+}
+
+.f_clear {
+    clear: both;
+}
+
+.container {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.nav-bar {
+    width: 100%;
+    background-color: white;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.nav-bar .left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar .nav {
+    width: 150px;
+    margin-right: 20px;
+}
+
+#search {
+    display: flex;
+    align-items: center;
+}
+
+#search input {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    width: 300px;
+}
+
+#icon_search {
+    background-color: #007BFF;
+    padding: 10px;
+    border-radius: 0 5px 5px 0;
+    display: flex;
+    align-items: center;
+}
+
+#icon_search img {
+    filter: invert(1);
+    width: 20px;
+    cursor: pointer;
+}
+/* Dropdown Button */
+.dropbtn {
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+}
+
+/* Dropdown Button Hover */
+.dropbtn:hover {
+    background-color: #0056b3;
+}
+
+/* Dropdown Container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a,
+.dropdown-content .dropdown-logout {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    background-color: white;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover,
+.dropdown-content .dropdown-logout:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Additional styling for the dropdown-logout button */
+.dropdown-logout {
+    background: none;
+    border: none;
+    padding: 12px 16px;
+    text-align: left;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+}
+
+ul li {
+    float: left;
+    margin-right: 20px;
+}
+
+ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul li a:hover {
+    background-color: darkblue;
+}
+
+.tabcontent {
+    display: none;
+    padding: 20px;
+}
+
+#mid {
+    margin-top: 100px;
+}
+
+.course-card {
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 20px;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.course-card:hover {
+    transform: scale(1.05);
+}
+
+.course-image {
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin-right: 20px;
+}
+
+.course-details {
+    flex: 1;
+}
+
+.course-details h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.course-details p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.course-details button {
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.course-details button:hover {
+    background-color: #0056b3;
+}
+
+.course button {
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.course button:hover {
+    background-color: #0056b3;
+}
+.course button a{
+    color: white;
+}
+
+#footer {
+    background-color: #f1f1f1;
+    color: #333;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer_bottom_left, .footer_bottom_right {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.footer_bottom_left {
+    width: 60%;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.footer_bottom_left h1 {
+    margin-bottom: 10px;
+}
+
+.footer_bottom_left p {
+    margin: 5px 0;
+}
+
+.footer_bottom_right {
+    width: 35%;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.footer_bottom_right img {
+    width: 120px;
+    margin: 10px 0;
+    
+}
+
+.footer_main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #e9e9e9;
+}
+
+.footer_main p {
+    margin: 0;
+}
+
+.footer_main img {
+    width: 40px;
+    margin: 0 10px;
+}
+
+.footer_main img:hover {
+    filter: brightness(0.8);
+}
+
+/* .course-card-enrolled {
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    padding: 20px;
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+
+.course-card-enrolled:hover {
+    transform: scale(1.05);
+} */
+
+
+.course {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.course img {
+    max-width: 150px;
+    height: auto;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+.course-container {
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+}
+.course-details {
+    flex: 1;
+}
+.course-details h3 {
+    margin: 0;
+    font-size: 1.5em;
+}
+.course-details p {
+    margin: 5px 0;
+}

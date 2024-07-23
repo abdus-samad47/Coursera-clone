@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coursera</title>
+    <link rel="icon" href="https://d3njjcbhbojbot.cloudfront.net/web/images/favicons/favicon-v2-96x96.png" sizes="96x96">
+
+    
+    <style>
+
+        body {
+
+            background-color: rgb(93, 113, 138);
+        }
+
+        #heading1 {
+
+            margin-left: 8px;
+            text-align: center;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 34px;
+        }
+
+        #heading2 {
+
+            margin-left: 50px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            text-align: center;
+            margin-right: 40px;
+        }
+
+        .container {
+
+            width: 500px;
+            height: 610px;
+            border: 2px solid rgb(24, 89, 169);
+            /* background-color: cadetblue; */
+
+            border-radius: 5px;
+
+            margin: auto;
+            background-color: white;
+        }
+
+        .label {
+
+            margin-left: 50px;
+            /* margin-bottom: 20px; */
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+        }
+
+        .input {
+
+            width: 350px;
+            height: 40px;
+            margin-left: 50px;
+            /* margin-top: 20px; */
+            margin-bottom: 20px;
+        }
+
+        #loginbtn {
+            width: 360px;
+            height: 50px;
+            margin-top:5px;
+            background-color: rgb(24, 89, 169);
+            font-family: 'Open Sans', sans-serif;
+            margin-left: 50px;
+            font-size: 14px;
+        }
+
+        img {
+
+            width: 200px;
+            height: 40px;
+
+            margin-left: 145px;
+            margin-top: 20px;
+        }
+
+        #msg {
+
+            margin-left: 50px;
+            margin-top: 0;
+            color: rgb(80, 78, 78)
+        }
+
+        #registrationSuccess {
+
+            text-align: center;
+        }
+
+        #close {
+            width: 50px;
+            height: 40px;
+            transform: rotate(45deg);
+            margin-left: 450px;
+
+            /* position:absolute; */
+
+            font-size: 50px;
+            color: red;
+            cursor: pointer;
+        }
+
+        #continue {
+
+            width: 360px;
+            height: 50px;
+            margin-top:5px;
+            background-color: rgb(24, 89, 169);
+            font-family: 'Open Sans', sans-serif;
+            margin-left: 50px;
+            font-size: 14px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <a href="index.html"> <img src="img/coursera logo 2.png"></a>
+
+       
+        <div id="heading1">Sign up</div>
+
+        <p id="heading2">Learn on your own time from top universities and businesses.</p>
+
+        <form id="registrationForm">
+            <label class="label">FULL NAME</label><br>
+            <input class="input" type="text" name="fullname" placeholder="Enter your full name" required><br>
+        
+            <label class="label">EMAIL</label><br>
+            <input class="input" type="email" name="email" placeholder="name@email.com" required><br>
+        
+            <label class="label">PASSWORD</label><br>
+            <input class="input" type="password" name="password" placeholder="Create password" required><br>
+            <p id="registrationSuccess"></p>
+        
+            <!-- <a href="coursera_login.html" style="visibility: hidden;" id="continue">continue to login page</a><br> -->
+            <button type="submit" id="loginbtn">Create Account</button>
+            </form>
+    </div>
+
+    <script>
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        var fullname = document.getElementsByName('fullname')[0].value;
+        var email = document.getElementsByName('email')[0].value;
+        var password = document.getElementsByName('password')[0].value;
+
+        // Email regex pattern
+        var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        // Validate email
+        if (!emailPattern.test(email)) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'signup.php', true);
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                if (xhr.responseText === "success") {
+                    alert("Registration successful!");
+                    document.getElementById('registrationForm').reset();
+                    // document.getElementById('continue').style.visibility = 'visible';
+                    window.location.href = 'coursera_login.html';
+                } else {
+                    alert("Error: " + xhr.responseText);
+                }
+            } else {
+                alert("An error occurred during the request. Status code: " + xhr.status);
+            }
+        };
+
+        xhr.onerror = function() {
+            alert("An error occurred during the request.");
+        };
+
+        xhr.send('fullname=' + encodeURIComponent(fullname) + '&email=' + encodeURIComponent(email) + '&password=' + encodeURIComponent(password));
+    });
+</script>
+
+</body>
+
+</html>
